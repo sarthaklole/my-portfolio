@@ -1,0 +1,1603 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+/* =========================================================
+   MULTIVERSE THEME TOKENS
+   ========================================================= */
+:root,
+[data-dimension="earth-8086"] {
+  --void: #070A14;
+  --void-2: #101526;
+  --paper: #F5EFE6;
+  --ink: #141722;
+  --crimson: #E8352B;
+  --electric: #2F5FFF;
+  --yellow: #FFC93C;
+  --neon-cyan: #00F0FF;
+  --glitch-pink: #FF0055;
+  --text-sub: #D0CCD8;
+  --text-muted: #8B8799;
+  --border-dark: #273048;
+  --card-bg: #101628;
+  --hero-tag-bg: #FFC93C;
+}
+
+[data-dimension="earth-1610"] {
+  --void: #0B0E1A;
+  --void-2: #141424;
+  --paper: #F3EEE3;
+  --ink: #16161D;
+  --crimson: #E8352B;
+  --electric: #2F5FFF;
+  --yellow: #FFC93C;
+  --neon-cyan: #00F0FF;
+  --glitch-pink: #FF0055;
+  --text-sub: #C7C4B8;
+  --text-muted: #8A8878;
+  --border-dark: #2A2A38;
+  --card-bg: #141424;
+  --hero-tag-bg: #FFC93C;
+}
+
+[data-dimension="earth-65"] {
+  --void: #0E0B1F;
+  --void-2: #1A1433;
+  --paper: #FDF9FC;
+  --ink: #120E22;
+  --crimson: #FF3377;
+  --electric: #00E5FF;
+  --yellow: #E040FB;
+  --neon-cyan: #69F0AE;
+  --glitch-pink: #FF4081;
+  --text-sub: #D7D0E5;
+  --text-muted: #9E96B3;
+  --border-dark: #372D57;
+  --card-bg: #191331;
+  --hero-tag-bg: #00E5FF;
+}
+
+[data-dimension="earth-928"] {
+  --void: #040813;
+  --void-2: #0A1226;
+  --paper: #EBF1F5;
+  --ink: #070B14;
+  --crimson: #FF0D42;
+  --electric: #00C8FF;
+  --yellow: #FF9100;
+  --neon-cyan: #00E676;
+  --glitch-pink: #D50000;
+  --text-sub: #BACAD6;
+  --text-muted: #7E93A4;
+  --border-dark: #1E2D48;
+  --card-bg: #0A1226;
+  --hero-tag-bg: #FF0D42;
+}
+
+/* =========================================================
+   GLOBAL RESETS & COMIC SPEEDLINES
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--void);
+  color: var(--paper);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.portfolio-page {
+  background-color: var(--void);
+  color: var(--paper);
+  font-family: 'Space Grotesk', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.4s ease;
+}
+
+/* =========================================================
+   RICH COMIC BOOK BACKGROUND SYSTEM
+   ========================================================= */
+.comic-bg-viewport {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 1. Multiverse Atmospheric Glow Blobs */
+.comic-glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.18;
+  transition: all 0.6s ease;
+}
+
+.blob-top-left {
+  top: -120px;
+  left: -100px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, var(--crimson) 0%, var(--yellow) 60%, transparent 80%);
+}
+
+.blob-bottom-right {
+  bottom: -150px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--electric) 0%, var(--neon-cyan) 60%, transparent 80%);
+}
+
+.blob-center {
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--yellow) 0%, transparent 70%);
+  opacity: 0.05;
+}
+
+/* 2. Authentic CMYK Ben-Day Dots Grid */
+.comic-benday-dots {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle, rgba(232, 53, 43, 0.12) 1.2px, transparent 1.4px),
+    radial-gradient(circle, rgba(47, 95, 255, 0.10) 1.2px, transparent 1.4px),
+    radial-gradient(circle, rgba(255, 201, 60, 0.08) 1.4px, transparent 1.6px);
+  background-size: 24px 24px, 24px 24px, 16px 16px;
+  background-position: 0 0, 12px 12px, 6px 6px;
+  opacity: 0.75;
+}
+
+/* 3. Dynamic Comic Action Speed-Lines & Hatching */
+.comic-speedlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 38px,
+    rgba(255, 255, 255, 0.018) 38px,
+    rgba(255, 255, 255, 0.018) 40px
+  );
+  mask-image: radial-gradient(ellipse at center, transparent 30%, black 90%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, black 90%);
+  opacity: 0.8;
+}
+
+/* 4. Comic Book Page Grid Wireframes */
+.comic-panel-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 140px 140px;
+  opacity: 0.6;
+}
+
+.main-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS & GLITCH
+   ========================================================= */
+@keyframes driftA {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(-3px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes driftB {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(3px, -2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes floatSlow {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 12px var(--crimson)); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0) rotate(-15deg); opacity: 0; }
+  70% { transform: scale(1.15) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-8deg); opacity: 1; }
+}
+
+@keyframes senseWave {
+  0% { opacity: 0.3; stroke-dashoffset: 60; }
+  50% { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0.3; stroke-dashoffset: -60; }
+}
+
+@keyframes glitchJitter {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.burst { animation: floatSlow 6s ease-in-out infinite; }
+
+/* =========================================================
+   NAVBAR & DIMENSION SWITCHER
+   ========================================================= */
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid transparent;
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  color: var(--yellow);
+  text-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  user-select: none;
+}
+
+.navBrand:hover {
+  animation: glitchJitter 0.2s ease infinite;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 18px;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 4px 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+
+/* Dimension Switcher Widget */
+.dimension-switcher-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 22, 29, 0.85);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.dimension-status-beacon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.beacon-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--crimson);
+  box-shadow: 0 0 8px var(--crimson);
+  animation: pulseGlow 1.5s infinite;
+}
+
+.dimension-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.dimension-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-sub);
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  transition: all 0.2s ease;
+}
+
+.dim-code {
+  font-weight: 700;
+}
+
+.dim-hero {
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+.dimension-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--paper);
+}
+
+.dimension-btn.active {
+  background: var(--crimson);
+  color: var(--paper);
+  border-color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.dimension-btn.active .dim-hero {
+  color: var(--yellow);
+}
+
+/* =========================================================
+   HERO SECTION & CHROMATIC GLITCH
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 40px 40px;
+  overflow: hidden;
+  border-bottom: 4px solid var(--ink);
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--yellow);
+  background: rgba(255, 201, 60, 0.12);
+  border: 1px solid var(--yellow);
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  z-index: 2;
+  width: fit-content;
+}
+
+/* Chromatic Glitch Name */
+.heroNameWrap {
+  position: relative;
+  z-index: 2;
+  user-select: none;
+}
+
+.heroNameGlitch {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heroNameGlitch:hover .heroLayerRed {
+  transform: translate(-7px, 3px);
+}
+
+.heroNameGlitch:hover .heroLayerBlue {
+  transform: translate(7px, -3px);
+}
+
+.heroName {
+  font-family: 'Bangers', cursive;
+  font-size: 8.8vw;
+  line-height: 0.90;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.heroLayerRed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--crimson);
+  mix-blend-mode: screen;
+  transform: translate(-4px, 2px);
+  transition: transform 0.15s ease;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(232, 53, 43, 0.6);
+}
+
+.heroLayerBlue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--electric);
+  mix-blend-mode: screen;
+  transform: translate(4px, -2px);
+  transition: transform 0.15s ease;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(47, 95, 255, 0.6);
+}
+
+.heroLayerFront {
+  position: relative;
+  color: var(--paper);
+  text-shadow: 3px 3px 0 var(--ink);
+  z-index: 2;
+}
+
+.heroSub {
+  max-width: 580px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-sub);
+  margin-top: 24px;
+  z-index: 2;
+  position: relative;
+}
+
+.heroCtaGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.ctaBtn {
+  border-radius: 4px;
+  padding: 13px 26px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaPrimary {
+  background: var(--crimson);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.ctaGhost {
+  background: transparent;
+  color: var(--paper);
+  border: 3px solid var(--paper);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.ctaBtn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.ctaPrimary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* =========================================================
+   SPIDER-SENSE & PHOTO FRAME
+   ========================================================= */
+.heroPhotoWrap {
+  position: absolute;
+  right: 6%;
+  bottom: 12px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Spider-Sense Radiating Waves */
+.spider-sense-wrap {
+  position: relative;
+  width: 140px;
+  height: 50px;
+  margin-bottom: -15px;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.heroPhotoWrap:hover .spider-sense-wrap,
+.spider-sense-wrap.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spider-sense-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sense-wave {
+  stroke-dasharray: 60;
+  animation: senseWave 1.8s ease-in-out infinite;
+}
+
+.wave-1 { animation-delay: 0s; }
+.wave-2 { animation-delay: 0.3s; }
+.wave-3 { animation-delay: 0.6s; }
+
+.spider-sense-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--crimson);
+  color: var(--yellow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* Photo Frame Polaroid */
+.heroPhotoFrame {
+  position: relative;
+  width: 250px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--crimson), 14px 14px 0 var(--ink);
+  transform: rotate(3deg);
+  padding: 10px 10px 26px 10px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.heroPhotoFrame:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 12px 12px 0 var(--electric), 16px 16px 0 var(--ink);
+}
+
+.heroPhotoInner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 2px solid var(--ink);
+  line-height: 0;
+}
+
+.heroPhotoImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(0.8) contrast(1.2) brightness(1.05);
+}
+
+.heroPhotoDuotone {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, var(--crimson), var(--electric));
+  mix-blend-mode: color;
+  opacity: 0.85;
+}
+
+.heroPhotoHalftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(22, 22, 29, 0.5) 1px, transparent 1.2px);
+  background-size: 5px 5px;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+}
+
+.heroPhotoTag {
+  position: absolute;
+  bottom: -12px;
+  left: 10px;
+  background: var(--hero-tag-bg);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(-3deg);
+}
+
+/* Tape Accent on Polaroid */
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  transform: rotate(12deg);
+  z-index: 10;
+}
+
+/* =========================================================
+   COMIC SOUND TAGS (ONOMATOPOEIA)
+   ========================================================= */
+.comic-sound-tag {
+  display: inline-block;
+  font-family: 'Bangers', cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--ink);
+  user-select: none;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* =========================================================
+   PANELS & STICKERS
+   ========================================================= */
+.panel {
+  padding: 88px 0;
+  border-bottom: 2px dashed var(--border-dark);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.panelTab {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: 5px 14px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  margin-bottom: 18px;
+}
+
+.panelTitle {
+  font-family: 'Bangers', cursive;
+  font-size: 44px;
+  letter-spacing: 1.5px;
+  margin: 0 0 24px 0;
+  color: var(--paper);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.bodyText {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-sub);
+  max-width: 680px;
+}
+
+.variantSticker {
+  position: absolute;
+  top: 60px;
+  width: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--paper);
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 10px 6px 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+  z-index: 10;
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.variantSticker:hover {
+  transform: rotate(0deg) scale(1.15) !important;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.stickerCode {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+.stickerName {
+  font-family: 'Bangers', cursive;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   ORIGIN / TIMELINE (STORYBOARD STYLE)
+   ========================================================= */
+.timeline {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 18px 22px;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.timelineItem:hover {
+  transform: translateX(6px);
+  border-color: var(--electric);
+}
+
+.timelineIconWrap {
+  background: var(--ink);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timelineTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--paper);
+}
+
+.timelineMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 6px 0 0 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* =========================================================
+   POWERS / SKILLS (COMIC POWER-BARS)
+   ========================================================= */
+.skillGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 12px;
+}
+
+.skillGroup {
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.skillGroupLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--electric);
+  margin: 0;
+}
+
+.skillLevelBadge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: rgba(47, 95, 255, 0.15);
+  color: var(--neon-cyan);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--electric);
+}
+
+.skillTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  background: var(--ink);
+  border: 2px solid var(--border-dark);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: default;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.skillTag:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* =========================================================
+   MISSIONS / PROJECTS (COMIC BOOK COVERS)
+   ========================================================= */
+.grid2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 12px;
+}
+
+.projCard {
+  background: var(--paper);
+  color: var(--ink);
+  border: 3.5px solid var(--ink);
+  border-radius: 4px;
+  padding: 0;
+  box-shadow: 9px 9px 0 var(--ink);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projCard:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 13px 13px 0 var(--crimson), 16px 16px 0 var(--ink);
+}
+
+/* Comic Book Cover Header Banner */
+.comicCoverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+.comicCoverBody {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.projBadge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--crimson);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.projHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.projTitle {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.projBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #353530;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.projTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.projTag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--electric);
+  color: var(--paper);
+  padding: 3px 9px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+}
+
+.projFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1.5px dashed rgba(22, 22, 29, 0.3);
+}
+
+.projBarcode {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(22, 22, 29, 0.6);
+}
+
+.projLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+  transition: color 0.15s ease;
+}
+
+.projLink:hover {
+  color: var(--crimson);
+  border-bottom-color: var(--crimson);
+}
+
+.spiderIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   FEATS OF STRENGTH (MARTIAL ARTS COMBAT)
+   ========================================================= */
+.featGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.featCard {
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featCard:hover {
+  transform: rotate(0deg) scale(1.03) !important;
+  border-color: var(--yellow);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.featTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featBadge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--ink);
+}
+
+.featSoundEffect {
+  font-family: 'Bangers', cursive;
+  font-size: 14px;
+  color: var(--crimson);
+  letter-spacing: 0.5px;
+}
+
+.featTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 12px 0 6px 0;
+  color: var(--paper);
+}
+
+.featDetail {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.certRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* =========================================================
+   CONTACT SECTION ("TO BE CONTINUED...")
+   ========================================================= */
+.contact {
+  position: relative;
+  text-align: center;
+  padding: 110px 20px 70px;
+  overflow: hidden;
+}
+
+.contactEyebrow {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: 1.5px;
+  z-index: 2;
+  position: relative;
+}
+
+.contactTitle {
+  font-family: 'Bangers', cursive;
+  font-size: 52px;
+  letter-spacing: 2px;
+  margin: 10px 0 16px 0;
+  z-index: 2;
+  position: relative;
+  text-shadow: 3px 3px 0 var(--ink);
+}
+
+.contactSub {
+  color: var(--text-sub);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+  z-index: 2;
+  position: relative;
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 38px;
+  z-index: 2;
+  position: relative;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--paper);
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contactLink:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--yellow);
+  color: var(--yellow);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  font-size: 12px;
+  color: #6E6D7A;
+  font-family: 'JetBrains Mono', monospace;
+  border-top: 2px solid var(--ink);
+  background: var(--void);
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+@media (max-width: 900px) {
+  .variantSticker {
+    display: none !important;
+  }
+  .heroPhotoWrap {
+    position: static !important;
+    margin: 40px auto 0 !important;
+  }
+  .heroPhotoFrame {
+    transform: rotate(2deg) !important;
+    width: 220px !important;
+  }
+  .navRight {
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   SECRET COMIC VAULT MODAL & TRIGGER (EASTER EGG)
+   ========================================================= */
+.comic-vault-floating-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  padding: 8px 14px;
+  box-shadow: 5px 5px 0 var(--ink), 7px 7px 0 var(--crimson);
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.comic-vault-floating-trigger:hover {
+  transform: translate(-3px, -3px) scale(1.04);
+  box-shadow: 8px 8px 0 var(--ink), 11px 11px 0 var(--electric);
+}
+
+.vault-trigger-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vault-trigger-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+
+.vault-trigger-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  background: var(--crimson);
+  color: var(--paper);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.vault-trigger-title {
+  font-family: 'Bangers', cursive;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.vault-hotkey-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(22, 22, 29, 0.15);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px dashed var(--ink);
+}
+
+/* Modal Backdrop */
+.vault-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(7, 10, 20, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalZoom {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.vault-modal {
+  background: var(--void-2);
+  border: 4px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 12px 12px 0 var(--ink), 16px 16px 0 var(--crimson);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: modalZoom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ink);
+  color: var(--yellow);
+  padding: 12px 20px;
+  border-bottom: 3px solid var(--border-dark);
+}
+
+.vault-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vault-title {
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.vault-close-btn {
+  background: var(--crimson);
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.vault-close-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.vault-body {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  padding: 24px 28px;
+  overflow-y: auto;
+}
+
+/* Cover Showcase */
+.vault-cover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.vault-comic-frame {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  border: 3.5px solid var(--ink);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 var(--ink), 12px 12px 0 var(--electric);
+  background: #000;
+  transition: transform 0.3s ease;
+}
+
+.vault-comic-frame:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.vault-comic-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vault-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+}
+
+.vault-nav-btn {
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--border-dark);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.vault-nav-btn:hover {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.vault-counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Details */
+.vault-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vault-badges-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vault-badge-primary {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--crimson);
+  color: var(--paper);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+}
+
+.vault-badge-universe {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--electric);
+  color: var(--paper);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+}
+
+.vault-badge-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+}
+
+.vault-comic-title {
+  font-family: 'Bangers', cursive;
+  font-size: 36px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--paper);
+  line-height: 1.1;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.vault-speech-bubble {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  padding: 14px 18px 14px 34px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.speech-quote-icon {
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-family: 'Bangers', cursive;
+  font-size: 32px;
+  color: var(--crimson);
+  line-height: 1;
+}
+
+.vault-quote {
+  margin: 0;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.vault-personal-box {
+  background: rgba(22, 22, 29, 0.6);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+
+.vault-box-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.vault-personal-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-sub);
+}
+
+.vault-thumbnails-track {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.vault-thumb-btn {
+  background: none;
+  border: 2px solid var(--border-dark);
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+  width: 52px;
+  height: 72px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.vault-thumb-btn.active {
+  border-color: var(--yellow);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.vault-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .vault-body {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .vault-comic-frame {
+    max-width: 220px;
+  }
+  .vault-comic-title {
+    font-size: 28px;
+  }
+  .comic-vault-floating-trigger {
+    bottom: 16px;
+    right: 16px;
+    padding: 6px 10px;
+  }
+}
+
