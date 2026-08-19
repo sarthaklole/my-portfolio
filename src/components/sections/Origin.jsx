@@ -1,10 +1,10 @@
 import React from "react";
-import { GraduationCap, Code2 } from "lucide-react";
+import { GraduationCap, Award } from "lucide-react";
 import Panel from "../common/Panel";
 
 export default function Origin() {
   return (
-    <Panel id="origin" tab="ISSUE 01 — ORIGIN" title="Origin Story">
+    <Panel id="origin" tab="ISSUE 01 — ORIGIN" title="Origin Story & Academic Roots">
       <p className="bodyText">
         Currently pursuing a B.Tech in Electronics and Telecommunication
         Engineering, after completing a Diploma in Computer Science
@@ -29,7 +29,7 @@ export default function Origin() {
 
         <div className="timelineItem">
           <div className="timelineIconWrap">
-            <GraduationCap size={22} color="var(--crimson)" />
+            <Award size={22} color="var(--crimson)" />
           </div>
           <div>
             <p className="timelineTitle">
@@ -37,21 +37,6 @@ export default function Origin() {
             </p>
             <p className="timelineMeta">
               Sanjay Ghodawat Polytechnic, Atigre — 2020 – 2024
-            </p>
-          </div>
-        </div>
-
-        <div className="timelineItem">
-          <div className="timelineIconWrap">
-            <Code2 size={22} color="var(--yellow)" />
-          </div>
-          <div>
-            <p className="timelineTitle">
-              Software Development Internship
-            </p>
-            <p className="timelineMeta">
-              Qualitas Techno Solutions, Kolhapur — programming, debugging,
-              and industry-grade system architecture
             </p>
           </div>
         </div>

@@ -93,12 +93,18 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
       >
         <SpiderSense active={spiderSenseActive} />
 
+        {/* Foreground Photo Frame */}
         <div className="heroPhotoFrame">
           <div className="polaroid-tape" />
           <div className="heroPhotoInner">
-            <img src={heroPhoto} alt="Sarthak Lole" className="heroPhotoImg" />
-            <div className="heroPhotoDuotone" />
-            <div className="heroPhotoHalftone" />
+            <div className="heroPhotoComicBg" aria-hidden="true" />
+            <img
+              src={heroPhoto}
+              alt="Sarthak Lole"
+              className="heroPhotoImg"
+            />
+            <div className="heroPhotoComicHalftone" aria-hidden="true" />
+            <div className="heroPhotoGloss" />
           </div>
           <div className="heroPhotoTag">ISSUE 00 — SARTHAK</div>
         </div>

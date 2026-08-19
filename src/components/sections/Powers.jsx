@@ -10,7 +10,6 @@ export default function Powers() {
           <div key={s.group} className="skillGroup">
             <div className="skillHeader">
               <p className="skillGroupLabel">{s.group}</p>
-              <span className="skillLevelBadge">{s.level}</span>
             </div>
 
             <div className="skillTagList">

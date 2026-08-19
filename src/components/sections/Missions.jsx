@@ -6,7 +6,7 @@ import { PROJECTS } from "../../data/portfolioData";
 
 export default function Missions() {
   return (
-    <Panel id="missions" tab="ISSUE 03 — MISSIONS" title="Field Missions & Shipped Code">
+    <Panel id="missions" tab="ISSUE 04 — MISSIONS" title="Field Missions & Shipped Code">
       <div className="grid2col grid2">
         {PROJECTS.map((p) => (
           <div key={p.title} className="projCard">

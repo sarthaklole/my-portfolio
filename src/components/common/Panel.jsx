@@ -16,10 +16,7 @@ export default function Panel({ id, tab, title, children }) {
         transform: visible ? "translateY(0)" : "translateY(24px)",
       }}
     >
-      <VariantSticker
-        id={id}
-        side={id === "missions" || id === "contact" ? "left" : "right"}
-      />
+      <VariantSticker id={id} side="right" />
       <div className="panelTab">{tab}</div>
       <h2 className="panelTitle">{title}</h2>
       {children}

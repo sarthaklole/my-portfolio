@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="halftoneLight" />
-      <span className="contactEyebrow">ISSUE 05 — TO BE CONTINUED</span>
+      <span className="contactEyebrow">ISSUE 06 — CONTACT &amp; SIGNAL</span>
       <h2 className="contactTitle">Let's Build The Next Issue</h2>
       <p className="contactSub">
         Looking for a high-impact developer with relentless discipline and engineering focus?

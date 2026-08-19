@@ -5,7 +5,7 @@ import { FEATS } from "../../data/portfolioData";
 
 export default function Feats() {
   return (
-    <Panel id="feats" tab="ISSUE 04 — FEATS" title="Feats of Strength & Mastery">
+    <Panel id="feats" tab="ISSUE 05 — FEATS OF STRENGTH" title="Feats of Strength & Mastery">
       <p className="bodyText">
         Before the keyboard, there was <strong>Mardani Khel</strong> — a traditional
         Maharashtrian weapon martial art. The unwavering discipline, split-second

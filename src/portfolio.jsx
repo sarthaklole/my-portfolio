@@ -5,6 +5,7 @@ import Navbar from "./components/sections/Navbar";
 import Hero from "./components/sections/Hero";
 import Origin from "./components/sections/Origin";
 import Powers from "./components/sections/Powers";
+import Experience from "./components/sections/Experience";
 import Missions from "./components/sections/Missions";
 import Feats from "./components/sections/Feats";
 import Contact from "./components/sections/Contact";
@@ -42,6 +43,7 @@ export default function Portfolio() {
       <main className="main-content">
         <Origin />
         <Powers />
+        <Experience />
         <Missions />
         <Feats />
         <Contact />

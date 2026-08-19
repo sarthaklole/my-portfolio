@@ -22,21 +22,57 @@
 }
 
 [data-dimension="earth-1610"] {
-  --void: #0B0E1A;
-  --void-2: #141424;
-  --paper: #F3EEE3;
-  --ink: #16161D;
-  --crimson: #E8352B;
-  --electric: #2F5FFF;
-  --yellow: #FFC93C;
-  --neon-cyan: #00F0FF;
-  --glitch-pink: #FF0055;
-  --text-sub: #C7C4B8;
-  --text-muted: #8A8878;
-  --border-dark: #2A2A38;
-  --card-bg: #141424;
-  --hero-tag-bg: #FFC93C;
+  --void: #050508;
+  --void-2: #0D0D14;
+  --paper: #FFFFFF;
+  --ink: #000000;
+  --crimson: #E81A24;
+  --electric: #FFFFFF;
+  --yellow: #E81A24;
+  --neon-cyan: #FFFFFF;
+  --glitch-pink: #FF0033;
+  --text-sub: #E2E2E8;
+  --text-muted: #90909C;
+  --border-dark: #282834;
+  --card-bg: #0E0E15;
+  --hero-tag-bg: #E81A24;
 }
+
+/* Miles Morales (Earth-1610) Black, White & Red Theme Enhancements */
+[data-dimension="earth-1610"] .heroLayerBlue {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-dimension="earth-1610"] .heroLayerRed {
+  color: #E81A24 !important;
+  text-shadow: 0 0 12px rgba(232, 26, 36, 0.8) !important;
+}
+
+[data-dimension="earth-1610"] .ctaGhost {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+[data-dimension="earth-1610"] .ctaPrimary {
+  background: #E81A24;
+  color: #FFFFFF;
+  border-color: #000000;
+}
+
+[data-dimension="earth-1610"] .panelTab {
+  border-color: #E81A24;
+  color: #E81A24;
+  background: rgba(232, 26, 36, 0.12);
+}
+
+[data-dimension="earth-1610"] .projBadge,
+[data-dimension="earth-1610"] .expBadge {
+  background: #E81A24;
+  color: #FFFFFF;
+  border-color: #000000;
+}
+
 
 [data-dimension="earth-65"] {
   --void: #0E0B1F;
@@ -533,24 +569,25 @@ body {
 }
 
 /* =========================================================
-   SPIDER-SENSE & PHOTO FRAME
+   SPIDER-SENSE & PHOTO FRAME WITH COMIC BACKING COLLAGE
    ========================================================= */
 .heroPhotoWrap {
   position: absolute;
-  right: 6%;
-  bottom: 12px;
+  right: 5%;
+  top: 105px;
   z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
+  user-select: none;
 }
 
 /* Spider-Sense Radiating Waves */
 .spider-sense-wrap {
   position: relative;
-  width: 140px;
+  width: 150px;
   height: 50px;
-  margin-bottom: -15px;
+  margin-bottom: -10px;
   z-index: 6;
   pointer-events: none;
   opacity: 0;
@@ -595,82 +632,132 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Photo Frame Polaroid */
+/* Photo Frame Polaroid (Retro Comic Book Themed & Aligned) */
 .heroPhotoFrame {
   position: relative;
-  width: 250px;
+  width: 300px;
   background: var(--paper);
-  border: 3px solid var(--ink);
-  box-shadow: 10px 10px 0 var(--crimson), 14px 14px 0 var(--ink);
-  transform: rotate(3deg);
-  padding: 10px 10px 26px 10px;
+  border: 3.5px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--crimson), 16px 16px 0 var(--ink);
+  transform: rotate(2.5deg);
+  padding: 12px 12px 28px 12px;
+  border-radius: 4px;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   cursor: pointer;
+  z-index: 2;
 }
 
 .heroPhotoFrame:hover {
-  transform: rotate(0deg) scale(1.04);
-  box-shadow: 12px 12px 0 var(--electric), 16px 16px 0 var(--ink);
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 14px 14px 0 var(--electric), 20px 20px 0 var(--ink);
 }
 
 .heroPhotoInner {
   position: relative;
   overflow: hidden;
   width: 100%;
-  border: 2px solid var(--ink);
+  height: 310px;
+  border: 2.5px solid var(--ink);
+  border-radius: 3px;
+  background: #0E1220;
   line-height: 0;
 }
 
-.heroPhotoImg {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(0.8) contrast(1.2) brightness(1.05);
-}
-
-.heroPhotoDuotone {
+/* Aesthetic Comic Book Background Layer Behind Photo Cutout */
+.heroPhotoComicBg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(150deg, var(--crimson), var(--electric));
-  mix-blend-mode: color;
-  opacity: 0.85;
+  background: 
+    radial-gradient(circle at 50% 32%, rgba(255, 201, 60, 0.45) 0%, rgba(232, 53, 43, 0.55) 42%, #0E1220 88%),
+    repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.05) 0deg 15deg, transparent 15deg 30deg);
+  background-blend-mode: screen, normal;
+  z-index: 1;
+  transition: background 0.4s ease;
 }
 
-.heroPhotoHalftone {
+[data-dimension="earth-1610"] .heroPhotoComicBg {
+  background: 
+    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.4) 0%, rgba(232, 26, 36, 0.65) 45%, #050508 88%),
+    repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.06) 0deg 15deg, transparent 15deg 30deg);
+}
+
+[data-dimension="earth-65"] .heroPhotoComicBg {
+  background: 
+    radial-gradient(circle at 50% 32%, rgba(0, 229, 255, 0.45) 0%, rgba(255, 51, 119, 0.55) 45%, #0E0B1F 88%),
+    repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.05) 0deg 15deg, transparent 15deg 30deg);
+}
+
+[data-dimension="earth-928"] .heroPhotoComicBg {
+  background: 
+    radial-gradient(circle at 50% 32%, rgba(0, 200, 255, 0.45) 0%, rgba(255, 13, 66, 0.55) 45%, #040813 88%),
+    repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.05) 0deg 15deg, transparent 15deg 30deg);
+}
+
+/* Retro Comic Halftone Dots Overlay */
+.heroPhotoComicHalftone {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(22, 22, 29, 0.5) 1px, transparent 1.2px);
-  background-size: 5px 5px;
-  opacity: 0.25;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.28) 1.2px, transparent 0);
+  background-size: 4.5px 4.5px;
   mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+/* Perfect Photo Cutout Fitting & Aesthetic Crisp Filters */
+.heroPhotoImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.03) translateY(2px);
+  display: block;
+  z-index: 2;
+  filter: contrast(1.15) brightness(1.03) saturate(1.18) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.heroPhotoFrame:hover .heroPhotoImg {
+  transform: scale(1.07) translateY(-2px);
+  filter: contrast(1.2) brightness(1.05) saturate(1.22) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+}
+
+.heroPhotoGloss {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0.12) 0%, transparent 45%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+  z-index: 4;
 }
 
 .heroPhotoTag {
   position: absolute;
-  bottom: -12px;
+  bottom: -10px;
   left: 10px;
   background: var(--hero-tag-bg);
   color: var(--ink);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border: 2px solid var(--ink);
   box-shadow: 3px 3px 0 var(--ink);
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
 }
 
 /* Tape Accent on Polaroid */
 .polaroid-tape {
   position: absolute;
   top: -10px;
-  right: 20px;
-  width: 60px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.4);
+  right: 18px;
+  width: 55px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(2px);
-  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border: 1px dashed rgba(0, 0, 0, 0.25);
   transform: rotate(12deg);
   z-index: 10;
 }

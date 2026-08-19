@@ -13,9 +13,9 @@ export const DIMENSIONS = {
     name: "Earth-1610",
     hero: "Miles Morales",
     tagline: "Brooklyn's One and Only",
-    badgeColor: "#E8352B",
-    accentColor: "#2F5FFF",
-    highlightColor: "#FFC93C",
+    badgeColor: "#E81A24",
+    accentColor: "#FFFFFF",
+    highlightColor: "#E81A24",
   },
   "earth-65": {
     id: "earth-65",
@@ -40,31 +40,49 @@ export const DIMENSIONS = {
 export const NAV = [
   { id: "origin", label: "01 Origin" },
   { id: "powers", label: "02 Powers" },
-  { id: "missions", label: "03 Missions" },
-  { id: "feats", label: "04 Feats" },
-  { id: "contact", label: "05 Contact" },
+  { id: "experience", label: "03 Experience" },
+  { id: "missions", label: "04 Missions" },
+  { id: "feats", label: "05 Feats" },
+  { id: "contact", label: "06 Contact" },
 ];
 
 export const SKILLS = [
   {
     group: "Core Languages",
-    level: "Lv. 95 Master",
     items: ["C", "C++", "Java", "Python", "JavaScript"],
   },
   {
     group: "Backend Engine",
-    level: "Lv. 88 Advanced",
     items: ["Django", "REST APIs", "SQL"],
   },
   {
     group: "Frontend Web-Slinging",
-    level: "Lv. 92 Expert",
     items: ["React", "JavaScript (ES6+)", "HTML5", "CSS3", "Bootstrap"],
   },
   {
     group: "Gadgets & Arsenal",
-    level: "Lv. 90 Utility",
     items: ["Git", "GitHub", "Vite", "VS Code", "Terminal"],
+  },
+];
+
+export const EXPERIENCES = [
+  {
+    issue: "MISSION LOG #01",
+    role: "Software Development Intern",
+    company: "Qualitas Techno Solutions",
+    location: "Kolhapur, Maharashtra",
+    type: "Industry Internship",
+    badge: "OPERATIONAL FIELDWORK",
+    stamp: "VERIFIED RECORD",
+    summary:
+      "Engineered robust software solutions, built scalable features, and tackled complex debugging tasks across industry-grade production architectures.",
+    highlights: [
+      "Engineered and debugged core software components ensuring optimal system performance and reliability.",
+      "Designed and integrated REST APIs for seamless data synchronization between frontend clients and server databases.",
+      "Applied modern software engineering standards, modular architecture, and version control (Git) in an agile setting.",
+      "Analyzed code bottlenecks and implemented optimized logic to elevate responsiveness and user experience."
+    ],
+    tech: ["Python", "Django", "JavaScript", "REST APIs", "SQL", "Git", "System Design"],
   },
 ];
 
@@ -156,6 +174,8 @@ export const SPIDER_BADGE_GRID = [
 export const VARIANT_BADGES = {
   origin: { code: "VAR-001", name: "Prime", ring: "#2F5FFF" },
   powers: { code: "VAR-002", name: "Circuit", ring: "#FFC93C" },
-  feats: { code: "VAR-004", name: "Iron-Vine", ring: "#2F5FFF" },
-  contact: { code: "VAR-005", name: "Echo", ring: "#FFC93C" },
+  experience: { code: "VAR-003", name: "Deploy", ring: "#00F0FF" },
+  missions: { code: "VAR-004", name: "Ops", ring: "#FF3377" },
+  feats: { code: "VAR-005", name: "Iron-Vine", ring: "#2F5FFF" },
+  contact: { code: "VAR-006", name: "Echo", ring: "#FFC93C" },
 };
