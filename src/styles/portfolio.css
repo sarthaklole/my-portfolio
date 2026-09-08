@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@1,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
 
 /* =========================================================
    MULTIVERSE THEME TOKENS
@@ -148,6 +148,27 @@ body {
   overflow: hidden;
 }
 
+/* Comic Panel Collage Background Wallpaper Layer */
+.comic-wallpaper-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 550px auto;
+  background-position: center top;
+  opacity: 0.38;
+  filter: contrast(1.2) grayscale(0.65) brightness(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.comic-wallpaper-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(11, 14, 26, 0.25) 0%, rgba(7, 10, 20, 0.70) 85%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* 1. Multiverse Atmospheric Glow Blobs */
 .comic-glow-blob {
   position: absolute;
@@ -285,7 +306,7 @@ body {
    NAVBAR & DIMENSION SWITCHER
    ========================================================= */
 .navBar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -294,9 +315,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 40px;
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid transparent;
-  transition: background 0.3s ease, border-bottom 0.3s ease;
+  background: var(--card-bg, #0B0E1A) !important;
+  border-bottom: 2px solid var(--border-dark, #273048) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .navBrand {
@@ -1687,4 +1708,1154 @@ body {
     padding: 6px 10px;
   }
 }
+
+/* =========================================================
+   MARVEL TOP BANNER & HEADER BAR
+   ========================================================= */
+.marvel-top-banner {
+  background: #E62429;
+  color: #FFFFFF;
+  border-bottom: 3px solid #111111;
+  padding: 6px 20px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(230, 36, 41, 0.3);
+}
+
+.marvel-top-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.marvel-brand-box {
+  background: #111111;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid #FFFFFF;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+}
+
+.marvel-logo-text {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 0.9;
+  color: #E62429;
+}
+
+.marvel-sub-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+.marvel-ticker-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 4px 10px;
+  overflow: hidden;
+  max-width: 550px;
+}
+
+.marvel-ticker-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  background: #FFCC00;
+  color: #111111;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.marvel-ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding-right: 30px;
+}
+
+.marvel-banner-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marvel-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marvel-search-icon {
+  position: absolute;
+  left: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.marvel-search-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  padding: 5px 24px 5px 28px;
+  outline: none;
+  width: 170px;
+  transition: all 0.2s ease;
+}
+
+.marvel-search-input:focus {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #FFCC00;
+  width: 210px;
+}
+
+.marvel-search-clear {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.marvel-sound-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.marvel-sound-btn.active {
+  background: #FFCC00;
+  color: #111111;
+  border-color: #111111;
+}
+
+.marvel-vault-badge {
+  background: #111111;
+  color: #FFCC00;
+  border: 1.5px solid #FFCC00;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.marvel-vault-badge:hover {
+  background: #FFCC00;
+  color: #111111;
+  transform: translateY(-1px);
+}
+
+/* MARVEL HERO UNIVERSE QUOTE */
+.marvel-hero-universe-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 201, 60, 0.12);
+  border: 1.5px solid var(--yellow);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--yellow);
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* =========================================================
+   MARVEL CHARACTER POWER MATRIX GRID
+   ========================================================= */
+.marvel-power-grid-container {
+  background: var(--card-bg);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 36px;
+  box-shadow: 6px 6px 0 var(--ink);
+  position: relative;
+}
+
+.marvel-power-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-dark);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.power-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.power-card-main-title {
+  font-family: 'Bangers', cursive;
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--paper);
+}
+
+.power-card-subtitle {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.power-card-issue-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--crimson);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+}
+
+.marvel-power-card-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .marvel-power-card-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.power-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.power-stat-row {
+  background: rgba(20, 23, 34, 0.6);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.power-stat-row:hover,
+.power-stat-row.selected {
+  border-color: var(--yellow);
+  background: rgba(255, 201, 60, 0.08);
+  transform: translateX(4px);
+}
+
+.stat-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stat-icon-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-emoji {
+  font-size: 18px;
+}
+
+.stat-name-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--paper);
+}
+
+.stat-score-pills {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.score-pill {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-dark);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.score-pill.filled {
+  background: var(--crimson);
+  color: #FFFFFF;
+  border-color: var(--ink);
+}
+
+.stat-num-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--yellow);
+  margin-left: 6px;
+}
+
+.power-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.power-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--crimson), var(--yellow));
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.power-spotlight-card {
+  background: var(--ink);
+  border: 3px solid var(--yellow);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 4px 4px 0 var(--yellow);
+}
+
+.spotlight-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spotlight-card-top-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+.spotlight-icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 201, 60, 0.15);
+  border: 3px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.spotlight-big-emoji {
+  font-size: 34px;
+}
+
+.spotlight-stat-title {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  color: #FFFFFF;
+}
+
+.spotlight-meter-wrap {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.spotlight-meter-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--neon-cyan);
+}
+
+.spotlight-meter-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.spotlight-meter-fill {
+  height: 100%;
+  background: var(--neon-cyan);
+  transition: width 0.5s ease;
+}
+
+.spotlight-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-sub);
+  margin: 0 0 16px 0;
+}
+
+.spotlight-card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+.powers-arsenal-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Bangers', cursive;
+  font-size: 22px;
+  color: var(--yellow);
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.skillLevelBadge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* =========================================================
+   PROJECT COMIC READER MODAL
+   ========================================================= */
+.comic-reader-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 15, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.comic-reader-modal {
+  background: var(--card-bg);
+  border: 4px solid var(--ink);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 10px 10px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.comic-reader-header {
+  background: #E62429;
+  color: #FFFFFF;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--ink);
+}
+
+.comic-reader-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reader-issue-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  color: #FFCC00;
+}
+
+.reader-project-title {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.comic-reader-close-btn {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.comic-reader-close-btn:hover {
+  background: #FFFFFF;
+  color: #E62429;
+}
+
+.comic-reader-body {
+  padding: 24px;
+}
+
+.comic-page-paper {
+  background: #FFF8EB;
+  color: #111111;
+  border: 3px solid #111111;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.comic-page-header-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #111111;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.strip-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  background: #E62429;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.strip-page-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555555;
+}
+
+.comic-page-caption-box {
+  background: #FFCC00;
+  border: 2px solid #111111;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  box-shadow: 3px 3px 0 #111111;
+}
+
+.caption-title {
+  font-family: 'Bangers', cursive;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.comic-speech-cloud {
+  background: #FFFFFF;
+  border: 3px solid #111111;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.comic-page-text {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 0;
+  color: #111111;
+}
+
+.comic-page-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.comic-page-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  background: #111111;
+  color: #FFCC00;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.comic-page-footer-info {
+  border-top: 2px solid #111111;
+  padding-top: 14px;
+}
+
+.full-project-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444444;
+  margin: 0 0 14px 0;
+}
+
+.comic-reader-repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #E62429;
+  color: #FFFFFF;
+  border: 2px solid #111111;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-family: 'Bangers', cursive;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #111111;
+  transition: all 0.15s ease;
+}
+
+.comic-reader-repo-btn:hover {
+  background: #FFCC00;
+  color: #111111;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111111;
+}
+
+.published-paper-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #E62429;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.comic-page-corner-fold {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 28px 28px;
+  border-color: transparent transparent #111111 transparent;
+  box-shadow: -2px -2px 0 rgba(0,0,0,0.2);
+}
+
+.comic-reader-footer {
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 2px solid var(--border-dark);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reader-nav-btn {
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--border-dark);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.reader-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.reader-nav-btn:not(:disabled):hover {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.reader-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.reader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reader-dot.active {
+  background: var(--yellow);
+  transform: scale(1.3);
+}
+
+/* COMIC ISSUE HOVER CARD */
+.comic-issue-hover-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.comic-issue-hover-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.comic-price-tag {
+  color: var(--yellow);
+  font-weight: 800;
+}
+
+.projActionBtnGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comic-open-reader-btn {
+  background: var(--crimson);
+  color: #FFFFFF;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.comic-open-reader-btn:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.paper-badge-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--crimson);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comic-feat-interactive-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.comic-feat-interactive-card:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.featCategoryStrip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--yellow);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+.feat-emoji-icon {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+/* =========================================================
+   MARVEL HERO UNIVERSE QUOTE (Compact & Proportional Size)
+   ========================================================= */
+.marvel-hero-universe-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 201, 60, 0.08);
+  border: 1.5px solid var(--yellow);
+  padding: 6px 14px;
+  border-radius: 6px;
+  max-width: 580px;
+  margin: 12px auto 20px auto;
+  box-shadow: 3px 3px 0 var(--ink);
+  text-align: center;
+}
+
+.marvel-hero-universe-quote .quote-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--yellow);
+  line-height: 1.4;
+}
+
+.hero-quote-sparkle {
+  color: var(--yellow);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CLEAN ORIGINAL BUTTON STYLING
+   ========================================================= */
+.ctaBtn {
+  border-radius: 4px;
+  padding: 13px 26px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.ctaPrimary {
+  background: var(--crimson);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.ctaGhost {
+  background: transparent;
+  color: var(--paper);
+  border: 3px solid var(--paper);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.ctaBtn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.ctaPrimary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* =========================================================
+   MARVEL TOP BANNER & TICKER (PREVENT TEXT OVERLAP)
+   ========================================================= */
+.marvel-top-banner {
+  background: #ed16df70;
+  color: #FFFFFF;
+  border-bottom: 3px solid #111111;
+  padding: 6px 20px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(230, 36, 41, 0.3);
+}
+
+.marvel-top-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.marvel-brand-box {
+  background: #111111;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid #FFFFFF;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+}
+
+.marvel-logo-text {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 0.9;
+  color: #E62429;
+}
+
+.marvel-sub-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+.marvel-ticker-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 4px 10px;
+  overflow: hidden;
+  max-width: 580px;
+}
+
+.marvel-ticker-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  background: #FFCC00;
+  color: #111111;
+  padding: 3px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  z-index: 2;
+  white-space: nowrap;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.marvel-ticker-track-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.marvel-ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 22s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding-right: 40px;
+}
+
+.marvel-banner-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marvel-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marvel-search-icon {
+  position: absolute;
+  left: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.marvel-search-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  padding: 5px 24px 5px 28px;
+  outline: none;
+  width: 170px;
+  transition: all 0.2s ease;
+}
+
+.marvel-search-input:focus {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #FFCC00;
+  width: 210px;
+}
+
+.marvel-search-clear {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.marvel-sound-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.marvel-sound-btn.active {
+  background: #FFCC00;
+  color: #111111;
+  border-color: #111111;
+}
+
+/* =========================================================
+   BRIGHT & READABLE FOOTER STYLING
+   ========================================================= */
+.footer {
+  background: var(--card-bg, #0D111E);
+  border-top: 3px solid var(--border-dark, #273048);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-copyright {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-portal-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--yellow, #FFCC00) !important;
+  background: rgba(255, 204, 0, 0.12);
+  border: 1.5px solid var(--yellow, #FFCC00);
+  padding: 4px 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--ink, #111);
+}
+
+.footer-sub-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #E2E2E8 !important;
+}
+
+
+
+
+
+
+
 

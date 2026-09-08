@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import { Terminal, ArrowDown } from "lucide-react";
+import { Terminal, ArrowDown, Sparkles } from "lucide-react";
 import { DIMENSIONS } from "../../data/portfolioData";
 import heroPhoto from "../../sarthak-photo.png";
 import SpiderSense from "../common/SpiderSense";
 import ComicSoundTag from "../common/ComicSoundTag";
 
-export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
+export default function Hero({ onNavigate, currentDimension = "earth-8086", onPlaySound }) {
   const [showThwip, setShowThwip] = useState(false);
   const [spiderSenseActive, setSpiderSenseActive] = useState(true);
   const dimData = DIMENSIONS[currentDimension] || DIMENSIONS["earth-8086"];
 
   const handleThwipClick = () => {
     setShowThwip(true);
+    onPlaySound?.("thwip");
     onNavigate("missions");
     setTimeout(() => setShowThwip(false), 1200);
+  };
+
+  const handleContactClick = () => {
+    onPlaySound?.("click");
+    onNavigate("contact");
   };
 
   return (
@@ -28,7 +34,11 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
       </p>
 
       <div className="heroNameWrap">
-        <div className="heroNameGlitch" title="Click to trigger Spider glitch">
+        <div
+          className="heroNameGlitch"
+          title="Click to trigger Spider glitch"
+          onClick={() => onPlaySound?.("snikt")}
+        >
           {/* Red Chromatic Aberration Layer */}
           <h1 className="heroName heroLayerRed" aria-hidden="true">
             SARTHAK
@@ -52,6 +62,11 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
         </div>
       </div>
 
+      {/* Sleek, Compact Comic Caption Quote Box */}
+      <div className="marvel-hero-universe-quote">
+        <span className="quote-text">"{dimData.quote}"</span>
+      </div>
+
       <p className="heroSub">
         B.Tech Electronics &amp; Telecommunication student who builds full-stack
         web projects by day and holds a national record in Mardani Khel by
@@ -68,14 +83,14 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
 
         <button
           className="ctaBtn ctaGhost"
-          onClick={() => onNavigate("contact")}
+          onClick={handleContactClick}
         >
           Get in touch
         </button>
 
         {showThwip && (
           <ComicSoundTag
-            text="*THWIP!*"
+            text={dimData.sound || "*THWIP!*"}
             color="var(--yellow)"
             bgColor="var(--crimson)"
             rotation={-6}
@@ -83,13 +98,19 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
         )}
       </div>
 
-      <div className="scrollHint" onClick={() => onNavigate("origin")}>
+      <div className="scrollHint" onClick={() => {
+        onPlaySound?.("click");
+        onNavigate("origin");
+      }}>
         <ArrowDown size={18} />
       </div>
 
       <div
         className="heroPhotoWrap"
-        onMouseEnter={() => setSpiderSenseActive(true)}
+        onMouseEnter={() => {
+          setSpiderSenseActive(true);
+          onPlaySound?.("click");
+        }}
       >
         <SpiderSense active={spiderSenseActive} />
 
@@ -106,7 +127,7 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086" }) {
             <div className="heroPhotoComicHalftone" aria-hidden="true" />
             <div className="heroPhotoGloss" />
           </div>
-          <div className="heroPhotoTag">ISSUE 00 — SARTHAK</div>
+          <div className="heroPhotoTag">ISSUE 00 — SARTHAK LOLE</div>
         </div>
       </div>
     </header>

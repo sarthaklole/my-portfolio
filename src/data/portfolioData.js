@@ -7,6 +7,8 @@ export const DIMENSIONS = {
     badgeColor: "#FFC93C",
     accentColor: "#E8352B",
     highlightColor: "#00F0FF",
+    quote: "With great code comes great responsibility — and zero uncaught exceptions.",
+    sound: "*THWIP!*",
   },
   "earth-1610": {
     id: "earth-1610",
@@ -16,6 +18,8 @@ export const DIMENSIONS = {
     badgeColor: "#E81A24",
     accentColor: "#FFFFFF",
     highlightColor: "#E81A24",
+    quote: "Anyone can wear the mask. You can wear the mask. If you didn't know that, now you do.",
+    sound: "*ZAP!*",
   },
   "earth-65": {
     id: "earth-65",
@@ -25,6 +29,8 @@ export const DIMENSIONS = {
     badgeColor: "#FF4081",
     accentColor: "#00E5FF",
     highlightColor: "#E040FB",
+    quote: "I'm Spider-Gwen. I play drums in the Mary Janes and I swing through the multiverse.",
+    sound: "*THWAP!*",
   },
   "earth-928": {
     id: "earth-928",
@@ -34,60 +40,124 @@ export const DIMENSIONS = {
     badgeColor: "#FF0D42",
     accentColor: "#00C8FF",
     highlightColor: "#FF9100",
+    quote: "You're a mistake! I'm trying to save the entire multiversal canon!",
+    sound: "*SHING!*",
   },
 };
 
 export const NAV = [
   { id: "origin", label: "01 Origin" },
-  { id: "powers", label: "02 Powers" },
+  { id: "powers", label: "02 Powers & Arsenal" },
   { id: "experience", label: "03 Experience" },
-  { id: "missions", label: "04 Missions" },
-  { id: "feats", label: "05 Feats" },
+  { id: "missions", label: "04 Missions & Issues" },
+  { id: "feats", label: "05 Achievements" },
   { id: "contact", label: "06 Contact" },
+];
+
+export const MARVEL_HERO_STATS = [
+  {
+    key: "intelligence",
+    name: "INTELLIGENCE",
+    score: 6,
+    max: 7,
+    percentage: 92,
+    desc: "B.Tech Electronics & Telecom Engineering, Full-Stack Architecture, REST API Design.",
+    icon: "🧠",
+  },
+  {
+    key: "strength",
+    name: "STRENGTH & ENDURANCE",
+    score: 7,
+    max: 7,
+    percentage: 98,
+    desc: "National Record Holder in Mardani Khel unbroken weapon performance.",
+    icon: "💪",
+  },
+  {
+    key: "speed",
+    name: "SPEED & AGILITY",
+    score: 6,
+    max: 7,
+    percentage: 90,
+    desc: "High-velocity web slinging with React 19, Vite, and ultra-fast Django servers.",
+    icon: "⚡",
+  },
+  {
+    key: "durability",
+    name: "SYSTEM DURABILITY",
+    score: 6,
+    max: 7,
+    percentage: 94,
+    desc: "Resilient error handling, unit-tested components, and fault-tolerant APIs.",
+    icon: "🛡️",
+  },
+  {
+    key: "combat",
+    name: "COMBAT MASTERY",
+    score: 7,
+    max: 7,
+    percentage: 100,
+    desc: "State Gold Medalist in Weapon Rolling & Inter-State Combat Championship.",
+    icon: "⚔️",
+  },
+  {
+    key: "energy",
+    name: "ENERGY PROJECTION",
+    score: 6,
+    max: 7,
+    percentage: 88,
+    desc: "Circuitry engineering, signal processing, and full-stack cloud data streams.",
+    icon: "🔮",
+  },
 ];
 
 export const SKILLS = [
   {
-    group: "Core Languages",
-    items: ["C", "C++", "Java", "Python", "JavaScript"],
+    group: "Core Languages & Logic",
+    items: ["C", "C++", "Java", "Python", "JavaScript (ES6+)"],
+    level: "MASTER",
   },
   {
-    group: "Backend Engine",
-    items: ["Django", "REST APIs", "SQL"],
+    group: "Backend Engine & Web",
+    items: ["Django", "REST APIs", "SQL", "Database Schemas"],
+    level: "EXPERT",
   },
   {
     group: "Frontend Web-Slinging",
-    items: ["React", "JavaScript (ES6+)", "HTML5", "CSS3", "Bootstrap"],
+    items: ["React", "HTML5", "CSS3 / Custom Styling", "Bootstrap", "Responsive Design"],
+    level: "EXPERT",
   },
   {
     group: "Gadgets & Arsenal",
-    items: ["Git", "GitHub", "Vite", "VS Code", "Terminal"],
+    items: ["IoT", "Embedded Systems", "Git", "GitHub", "Vite", "VS Code", "Terminal"],
+    level: "OPERATIONAL",
   },
 ];
 
 export const EXPERIENCES = [
   {
     issue: "MISSION LOG #01",
-    role: "Software Development Intern",
+    role: "IoT & Embedded Systems Intern",
     company: "Qualitas Techno Solutions",
     location: "Kolhapur, Maharashtra",
-    type: "Industry Internship",
+    type: "IoT & Embedded Systems Internship",
     badge: "OPERATIONAL FIELDWORK",
     stamp: "VERIFIED RECORD",
     summary:
-      "Engineered robust software solutions, built scalable features, and tackled complex debugging tasks across industry-grade production architectures.",
+      "Engineered IoT firmware, embedded system hardware interfaces, and sensor telemetry pipelines connected with full-stack server architectures.",
     highlights: [
-      "Engineered and debugged core software components ensuring optimal system performance and reliability.",
-      "Designed and integrated REST APIs for seamless data synchronization between frontend clients and server databases.",
-      "Applied modern software engineering standards, modular architecture, and version control (Git) in an agile setting.",
-      "Analyzed code bottlenecks and implemented optimized logic to elevate responsiveness and user experience."
+      "Designed and deployed embedded microcontrollers and IoT sensor modules for real-time telemetry data collection.",
+      "Engineered robust REST API bridges linking hardware sensor streams to backend databases and web monitoring dashboards.",
+      "Optimized low-power firmware logic, C/C++ hardware drivers, and system communication protocols.",
+      "Applied agile software engineering principles, circuit debugging, and version control (Git) across production hardware.",
     ],
-    tech: ["Python", "Django", "JavaScript", "REST APIs", "SQL", "Git", "System Design"],
+    tech: ["IoT", "Embedded Systems", "C", "C++", "Python", "Django", "Sensors", "REST APIs", "Git"],
   },
 ];
 
 export const PROJECTS = [
   {
+    id: "civil-inventory",
     issue: "ISSUE #01",
     price: "$0.75",
     date: "AUG 2024",
@@ -98,8 +168,23 @@ export const PROJECTS = [
     tags: ["Research Paper", "Full-Stack", "Django", "Database"],
     link: null,
     barcode: "||| | |||| | | |||||",
+    pages: [
+      {
+        pageTitle: "COVER & RESEARCH VERIFICATION",
+        content: "Published in IJIRCCE Journal. Solves critical inventory tracking, material dispatch, and audit trail bottlenecks in large-scale civil construction operations.",
+      },
+      {
+        pageTitle: "TECHNICAL ARCHITECTURE",
+        content: "Built on Django MVC architecture with relational SQL backend, custom session management, and automated stock deficit notifications.",
+      },
+      {
+        pageTitle: "IMPACT & RESULTS",
+        content: "Reduced site record discrepancy by 85%, accelerated material audit reporting, and provided real-time stock dashboards for project engineers.",
+      },
+    ],
   },
   {
+    id: "amazon-clone",
     issue: "ISSUE #02",
     price: "$0.75",
     date: "OCT 2024",
@@ -110,6 +195,20 @@ export const PROJECTS = [
     tags: ["HTML5", "CSS3", "UI/UX", "Responsive"],
     link: "https://github.com",
     barcode: "|||| | | ||| || ||||",
+    pages: [
+      {
+        pageTitle: "SUPER-STOREFRONT COVER",
+        content: "Pixel-perfect clone of Amazon's frontend architecture featuring responsive navigation, multi-column megamenus, and dynamic product grids.",
+      },
+      {
+        pageTitle: "UI/UX HIGHLIGHTS",
+        content: "Pure custom CSS layout engine with glassmorphic modals, smooth image carousels, and responsive breakpoint optimizations across mobile and desktop.",
+      },
+      {
+        pageTitle: "INTERACTIVE CODE PREVIEW",
+        content: "Clean, semantic HTML5 structure with zero third-party UI framework bloat for maximum performance and fast DOM rendering.",
+      },
+    ],
   },
 ];
 
@@ -120,6 +219,7 @@ export const FEATS = [
     category: "Mardani Khel",
     detail: "Longest unbroken duration performing traditional Maharashtrian weapon martial arts (Mardani Khel).",
     sound: "*KRAA-SH!*",
+    icon: "🏆",
   },
   {
     title: "National Martial Arts Festival",
@@ -127,6 +227,7 @@ export const FEATS = [
     category: "Inter-State Combat",
     detail: "Proudly represented Maharashtra at the National Martial Arts Championship held in Kerala.",
     sound: "*THWAP!*",
+    icon: "🥊",
   },
   {
     title: "State Gold Medalist",
@@ -134,6 +235,7 @@ export const FEATS = [
     category: "Weapon Rolling",
     detail: "Awarded 1st Place State Gold Medal for flawless speed, precision, and weapon rotation mastery.",
     sound: "*SHING!*",
+    icon: "🥇",
   },
   {
     title: "State Silver Medalist",
@@ -141,34 +243,8 @@ export const FEATS = [
     category: "Stick Rotation",
     detail: "Secured State Silver Medal demonstrating traditional high-velocity lathi combat techniques.",
     sound: "*WHIRL!*",
+    icon: "🥈",
   },
-];
-
-export const BADGE_PALETTE = {
-  ".": "transparent",
-  "B": "#21211E", // Black outline & spider glyph
-  "R": "#EE4745", // Spider-Man red circle
-  "P": "#F7A1A9", // Pink highlight
-  "L": "#FCE1E4", // Light pink shine
-};
-
-export const SPIDER_BADGE_GRID = [
-  ".....BBBBBB.....",
-  "...BBLLLLLLBB...",
-  "..BLLRRRRRRRPB..",
-  ".BLRRRRRRRRRRRP.",
-  ".BLRRB.BB.RRPB..",
-  "BLRRRB.BB.RRRPB.",
-  "BPRRBBBBBBBBRRPB",
-  "BRRRBRBBBBRBRRRB",
-  "BRRRBRBBBBRBRRRB",
-  "BRRRBBBBBBBBRRRB",
-  "BRRRRBRBBRBRRRRB",
-  ".BRRRBRRRRBRRRB.",
-  ".BRRRRRRRRRRRRB.",
-  "..BRRRRRRRRRB...",
-  "...BBRRRRRRBB...",
-  ".....BBBBBB.....",
 ];
 
 export const VARIANT_BADGES = {
