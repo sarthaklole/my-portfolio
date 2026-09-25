@@ -1,10 +1,12 @@
 import React from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import VariantSticker from "../common/VariantSticker";
 
-export default function Contact() {
+export default function Contact({ onPlaySound }) {
   return (
     <section id="contact" className="contact">
       <div className="halftoneLight" />
+
       <span className="contactEyebrow">ISSUE 06 — CONTACT &amp; SIGNAL</span>
       <h2 className="contactTitle">Let's Build The Next Issue</h2>
       <p className="contactSub">

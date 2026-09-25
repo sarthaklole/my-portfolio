@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useOnScreen } from "../../hooks/useOnScreen";
 import VariantSticker from "./VariantSticker";
 
-export default function Panel({ id, tab, title, children }) {
+export default function Panel({ id, tab, title, children, onPlaySound }) {
   const ref = useRef(null);
   const visible = useOnScreen(ref);
 
@@ -16,7 +16,7 @@ export default function Panel({ id, tab, title, children }) {
         transform: visible ? "translateY(0)" : "translateY(24px)",
       }}
     >
-      <VariantSticker id={id} side="right" />
+      <VariantSticker id={id} side="right" onPlaySound={onPlaySound} />
       <div className="panelTab">{tab}</div>
       <h2 className="panelTitle">{title}</h2>
       {children}

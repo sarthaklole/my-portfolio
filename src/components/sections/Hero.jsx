@@ -4,8 +4,10 @@ import { DIMENSIONS } from "../../data/portfolioData";
 import heroPhoto from "../../sarthak-photo.png";
 import SpiderSense from "../common/SpiderSense";
 import ComicSoundTag from "../common/ComicSoundTag";
+import ComicSticker from "../common/ComicSticker";
+import stickerOverthink from "../../assets/stickers/sticker-overthink.png";
 
-export default function Hero({ onNavigate, currentDimension = "earth-8086", onPlaySound }) {
+export default function Hero({ onNavigate, currentDimension = "earth-8086", onPlaySound, onOpenResume }) {
   const [showThwip, setShowThwip] = useState(false);
   const [spiderSenseActive, setSpiderSenseActive] = useState(true);
   const dimData = DIMENSIONS[currentDimension] || DIMENSIONS["earth-8086"];
@@ -82,6 +84,16 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086", onPl
         </button>
 
         <button
+          className="ctaBtn ctaResume"
+          onClick={() => {
+            onPlaySound?.("page");
+            onOpenResume?.();
+          }}
+        >
+          Read Resume Volume #01
+        </button>
+
+        <button
           className="ctaBtn ctaGhost"
           onClick={handleContactClick}
         >
@@ -116,6 +128,18 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086", onPl
 
         {/* Foreground Photo Frame */}
         <div className="heroPhotoFrame">
+          {/* Slapped Overthink Sticker on Polaroid Corner */}
+          <ComicSticker
+            src={stickerOverthink}
+            alt="Hold On. Let Me Overthink This."
+            title="Hold On. Let Me Overthink This."
+            rotation="-10deg"
+            sound="click"
+            soundText="*OVERTHINKING...*"
+            className="sticker-hero-overthink"
+            onPlaySound={onPlaySound}
+          />
+
           <div className="polaroid-tape" />
           <div className="heroPhotoInner">
             <div className="heroPhotoComicBg" aria-hidden="true" />

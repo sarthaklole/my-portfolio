@@ -15,6 +15,7 @@ import ComicVaultModal from "./components/common/ComicVaultModal";
 import ComicVaultTrigger from "./components/common/ComicVaultTrigger";
 import ComicBackground from "./components/common/ComicBackground";
 import ComicReaderModal from "./components/common/ComicReaderModal";
+import ComicResumeModal from "./components/common/ComicResumeModal";
 
 import { useComicSound } from "./hooks/useComicSound";
 
@@ -24,6 +25,7 @@ export default function Portfolio() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
   const [readerOpen, setReaderOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   const {
     soundEnabled,
@@ -32,12 +34,16 @@ export default function Portfolio() {
     playBoom,
     playSnikt,
     playClick,
+    playPage,
+    playWarp,
   } = useComicSound();
 
   const handlePlaySound = (type) => {
     if (type === "thwip") playThwip();
     else if (type === "boom") playBoom();
     else if (type === "snikt") playSnikt();
+    else if (type === "page") playPage();
+    else if (type === "warp") playWarp();
     else playClick();
   };
 
@@ -56,18 +62,8 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio-page" data-dimension={dimension}>
-      {/* Top Iconic Marvel Red Header Bar with Search & Ticker */}
-      <MarvelBanner
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        soundEnabled={soundEnabled}
-        onToggleSound={toggleSound}
-        currentDimension={dimension}
-        onOpenVault={() => {
-          setVaultOpen(true);
-          handlePlaySound("thwip");
-        }}
-      />
+      {/* Top Thin Breaking Ticker */}
+      <MarvelBanner currentDimension={dimension} />
 
       {/* Dynamic Comic Book Background Layers */}
       <ComicBackground />
@@ -80,12 +76,12 @@ export default function Portfolio() {
         currentDimension={dimension}
         onSelectDimension={(dim) => {
           setDimension(dim);
-          handlePlaySound("snikt");
+          handlePlaySound("warp");
         }}
-        onOpenVault={() => {
-          setVaultOpen(true);
-          handlePlaySound("thwip");
-        }}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        soundEnabled={soundEnabled}
+        onToggleSound={toggleSound}
       />
 
       <Hero
@@ -95,22 +91,26 @@ export default function Portfolio() {
         }}
         currentDimension={dimension}
         onPlaySound={handlePlaySound}
+        onOpenResume={() => {
+          setResumeOpen(true);
+          handlePlaySound("page");
+        }}
       />
 
       <main className="main-content">
-        <Origin />
+        <Origin onPlaySound={handlePlaySound} />
         <Powers
           searchQuery={searchQuery}
           onPlaySound={handlePlaySound}
         />
-        <Experience />
+        <Experience onPlaySound={handlePlaySound} />
         <Missions
           searchQuery={searchQuery}
           onOpenReader={handleOpenReader}
           onPlaySound={handlePlaySound}
         />
         <Feats onPlaySound={handlePlaySound} />
-        <Contact />
+        <Contact onPlaySound={handlePlaySound} />
       </main>
 
       <Footer currentDimension={dimension} />
@@ -133,6 +133,13 @@ export default function Portfolio() {
         project={selectedProject}
         isOpen={readerOpen}
         onClose={() => setReaderOpen(false)}
+        onPlaySound={handlePlaySound}
+      />
+
+      {/* Retro Vintage Comic Resume Viewer Modal */}
+      <ComicResumeModal
+        isOpen={resumeOpen}
+        onClose={() => setResumeOpen(false)}
         onPlaySound={handlePlaySound}
       />
     </div>

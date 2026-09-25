@@ -2,9 +2,9 @@ import React from "react";
 import { GraduationCap, Award } from "lucide-react";
 import Panel from "../common/Panel";
 
-export default function Origin() {
+export default function Origin({ onPlaySound }) {
   return (
-    <Panel id="origin" tab="ISSUE 01 — ORIGIN" title="Origin Story & Academic Roots">
+    <Panel id="origin" tab="ISSUE 01 — ORIGIN" title="Origin Story & Academic Roots" onPlaySound={onPlaySound}>
       <p className="bodyText">
         Currently pursuing a B.Tech in Electronics and Telecommunication
         Engineering, after completing a Diploma in Computer Science

@@ -16,7 +16,7 @@ export default function Missions({ searchQuery = "", onOpenReader, onPlaySound }
   });
 
   return (
-    <Panel id="missions" tab="ISSUE 04 — MISSIONS" title="Field Missions & Shipped Code">
+    <Panel id="missions" tab="ISSUE 04 — MISSIONS" title="Field Missions & Shipped Code" onPlaySound={onPlaySound}>
       <div className="grid2col grid2">
         {filteredProjects.map((p) => (
           <div

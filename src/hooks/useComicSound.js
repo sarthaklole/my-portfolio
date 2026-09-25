@@ -124,6 +124,61 @@ export function useComicSound() {
     }
   }, [soundEnabled, getAudioContext]);
 
+  // 5. Smooth Page Flip
+  const playPage = useCallback(() => {
+    if (!soundEnabled) return;
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(520, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(280, ctx.currentTime + 0.1);
+
+      gain.gain.setValueAtTime(0.07, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.1);
+    } catch (e) {
+      console.warn("Audio context error", e);
+    }
+  }, [soundEnabled, getAudioContext]);
+
+  // 6. Dimension Warp Glitch
+  const playWarp = useCallback(() => {
+    if (!soundEnabled) return;
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "sawtooth";
+      osc.frequency.setValueAtTime(200, ctx.currentTime);
+      osc.frequency.linearRampToValueAtTime(800, ctx.currentTime + 0.08);
+      osc.frequency.linearRampToValueAtTime(400, ctx.currentTime + 0.15);
+
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.15);
+    } catch (e) {
+      console.warn("Audio context error", e);
+    }
+  }, [soundEnabled, getAudioContext]);
+
   const toggleSound = () => setSoundEnabled((prev) => !prev);
 
   return {
@@ -133,5 +188,7 @@ export function useComicSound() {
     playBoom,
     playSnikt,
     playClick,
+    playPage,
+    playWarp,
   };
 }

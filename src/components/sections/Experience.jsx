@@ -4,9 +4,9 @@ import Panel from "../common/Panel";
 import PixelSpider from "../common/PixelSpider";
 import { EXPERIENCES } from "../../data/portfolioData";
 
-export default function Experience() {
+export default function Experience({ onPlaySound }) {
   return (
-    <Panel id="experience" tab="ISSUE 03 — EXPERIENCE" title="Field Operations & Experience">
+    <Panel id="experience" tab="ISSUE 03 — EXPERIENCE" title="Field Operations & Experience" onPlaySound={onPlaySound}>
       <p className="bodyText">
         From academic theory to production battlegrounds — building, testing, and shipping
         real-world code under professional engineering workflows.

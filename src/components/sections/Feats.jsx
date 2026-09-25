@@ -15,7 +15,8 @@ export default function Feats({ onPlaySound }) {
   };
 
   return (
-    <Panel id="feats" tab="ISSUE 05 — ACHIEVEMENTS" title="Achievements & Martial Arts Record">
+    <Panel id="feats" tab="ISSUE 05 — ACHIEVEMENTS" title="Achievements & Martial Arts Record" onPlaySound={onPlaySound}>
+
       <p className="bodyText">
         Before writing full-stack code, there was <strong>Mardani Khel</strong> — a traditional
         Maharashtrian weapon martial art. The unwavering discipline, split-second

@@ -15,9 +15,9 @@ export const DIMENSIONS = {
     name: "Earth-1610",
     hero: "Miles Morales",
     tagline: "Brooklyn's One and Only",
-    badgeColor: "#E81A24",
-    accentColor: "#FFFFFF",
-    highlightColor: "#E81A24",
+    badgeColor: "#CC2D20",
+    accentColor: "#387DD0",
+    highlightColor: "#9D2015",
     quote: "Anyone can wear the mask. You can wear the mask. If you didn't know that, now you do.",
     sound: "*ZAP!*",
   },
@@ -46,12 +46,12 @@ export const DIMENSIONS = {
 };
 
 export const NAV = [
-  { id: "origin", label: "01 Origin" },
-  { id: "powers", label: "02 Powers & Arsenal" },
-  { id: "experience", label: "03 Experience" },
-  { id: "missions", label: "04 Missions & Issues" },
-  { id: "feats", label: "05 Achievements" },
-  { id: "contact", label: "06 Contact" },
+  { id: "origin", label: "Origin" },
+  { id: "powers", label: "Powers & Arsenal" },
+  { id: "experience", label: "Experience" },
+  { id: "missions", label: "Missions & Issues" },
+  { id: "feats", label: "Achievements" },
+  { id: "contact", label: "Contact" },
 ];
 
 export const MARVEL_HERO_STATS = [
