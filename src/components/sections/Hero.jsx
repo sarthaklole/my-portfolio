@@ -6,6 +6,7 @@ import SpiderSense from "../common/SpiderSense";
 import ComicSoundTag from "../common/ComicSoundTag";
 import ComicSticker from "../common/ComicSticker";
 import stickerOverthink from "../../assets/stickers/sticker-overthink.png";
+import sarthakNameVideo from "../../assets/name video/yes.webm";
 
 export default function Hero({ onNavigate, currentDimension = "earth-8086", onPlaySound, onOpenResume }) {
   const [showThwip, setShowThwip] = useState(false);
@@ -36,32 +37,21 @@ export default function Hero({ onNavigate, currentDimension = "earth-8086", onPl
       </p>
 
       <div className="heroNameWrap">
-        <div
-          className="heroNameGlitch"
-          title="Click to trigger Spider glitch"
-          onClick={() => onPlaySound?.("snikt")}
-        >
-          {/* Red Chromatic Aberration Layer */}
-          <h1 className="heroName heroLayerRed" aria-hidden="true">
-            SARTHAK
-            <br />
-            LOLE
-          </h1>
-
-          {/* Cyan/Blue Chromatic Aberration Layer */}
-          <h1 className="heroName heroLayerBlue" aria-hidden="true">
-            SARTHAK
-            <br />
-            LOLE
-          </h1>
-
-          {/* Front Crisp Layer */}
-          <h1 className="heroName heroLayerFront">
-            SARTHAK
-            <br />
-            LOLE
-          </h1>
-        </div>
+        <video
+          ref={(el) => {
+            if (el) el.playbackRate = 0.5;
+          }}
+          onPlay={(e) => {
+            e.currentTarget.playbackRate = 0.5;
+          }}
+          src={sarthakNameVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="heroNameVideo"
+          title="Sarthak Lole"
+        />
       </div>
 
       {/* Sleek, Compact Comic Caption Quote Box */}

@@ -922,11 +922,32 @@ body {
   width: fit-content;
 }
 
-/* Chromatic Glitch Name */
+/* Chromatic Glitch Name / Name Video */
 .heroNameWrap {
   position: relative;
   z-index: 2;
   user-select: none;
+  margin-bottom: 16px;
+}
+
+.heroNameVideo {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  outline: none;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.heroNameVideo:hover {
+  transform: scale(1.015);
+  opacity: 1;
+  box-shadow: none;
 }
 
 .heroNameGlitch {
