@@ -32,16 +32,16 @@ export const DIMENSIONS = {
     quote: "I'm Spider-Gwen. I play drums in the Mary Janes and I swing through the multiverse.",
     sound: "*THWAP!*",
   },
-  "earth-928": {
-    id: "earth-928",
-    name: "Earth-928",
-    hero: "Spider-Man 2099",
-    tagline: "Nueva York Vanguard",
-    badgeColor: "#FF0D42",
-    accentColor: "#00C8FF",
-    highlightColor: "#FF9100",
-    quote: "You're a mistake! I'm trying to save the entire multiversal canon!",
-    sound: "*SHING!*",
+  "earth-138": {
+    id: "earth-138",
+    name: "Earth-138",
+    hero: "Spider-Punk (Hobie Brown)",
+    tagline: "Anarchy, Guitars & Anti-Establishment",
+    badgeColor: "#f8e602",
+    accentColor: "#00f0ff",
+    highlightColor: "#4bff21",
+    quote: "I don't believe in consistency. Or rules. Or labels.",
+    sound: "*KRAK!*",
   },
 };
 

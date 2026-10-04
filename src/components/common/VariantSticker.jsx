@@ -45,7 +45,7 @@ const STICKER_MAP = {
   },
   feats: {
     src: stickerSpiderpunk,
-    alt: "Spider-Punk Martial Arts Record",
+    alt: "Spider-Punk Extra-Curricular Activities",
     title: "Spider-Punk — Hobie Brown Anarchy & Discipline (VAR-005)",
     rotation: "10deg",
     sound: "snikt",

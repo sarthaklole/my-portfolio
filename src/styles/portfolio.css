@@ -19,92 +19,129 @@
   --border-dark: #273048;
   --card-bg: #101628;
   --hero-tag-bg: #FFC93C;
+
+  /* Multiverse Card Dynamic Theme Tokens */
+  --card-accent-color: #2F5FFF;
+  --card-badge-bg: #FFC93C;
+  --card-badge-color: #141722;
+  --card-tag-bg: #EBF3FF;
+  --card-tag-text: #2F5FFF;
+  --card-tag-hover-bg: #E8352B;
+  --card-hover-shadow-accent: #2F5FFF;
 }
 
 [data-dimension="earth-1610"] {
-  --void: #1C1D22;
-  --void-2: #3F3F3F;
-  --paper: #E1E9E1;
-  --ink: #141414;
-  --crimson: #CC2D20;
-  --electric: #387DD0;
-  --yellow: #387DD0;
-  --neon-cyan: #387DD0;
-  --glitch-pink: #9D2015;
-  --text-sub: #E1E9E1;
-  --text-muted: #9E9E9E;
-  --border-dark: #387DD0;
-  --card-bg: #282828;
-  --hero-tag-bg: #CC2D20;
+  --void: #1a1c24;
+  --void-2: #1a1c24;
+  --paper: #ffffff;
+  --ink: #1a1c24;
+  --crimson: #ff0000;
+  --electric: #0038c6;
+  --yellow: #79adff;
+  --neon-cyan: #79adff;
+  --glitch-pink: #ff0000;
+  --text-sub: #ffffff;
+  --text-muted: #79adff;
+  --border-dark: #0038c6;
+  --card-bg: #1a1c24;
+  --hero-tag-bg: #ff0000;
+
+  /* Miles Morales Earth-1610 Multiverse Card Dynamic Tokens */
+  --card-accent-color: #ff0000;
+  --card-badge-bg: #ff0000;
+  --card-badge-color: #ffffff;
+  --card-tag-bg: #e6eeff;
+  --card-tag-text: #0038c6;
+  --card-tag-hover-bg: #ff0000;
+  --card-hover-shadow-accent: #0038c6;
 }
 
 [data-dimension="earth-65"] {
-  --void: #0B0A18;
-  --void-2: #15132B;
-  --paper: #FFFFFF;
-  --ink: #110E23;
-  --crimson: #FF2A85;
-  --electric: #00F0FF;
-  --yellow: #FFE500;
-  --neon-cyan: #00F0FF;
-  --glitch-pink: #FF2A85;
-  --text-sub: #E2DDF5;
-  --text-muted: #958BB8;
-  --border-dark: #372A5A;
-  --card-bg: #171433;
-  --hero-tag-bg: #FF2A85;
+  --void: #0E0B1F;
+  --void-2: #1A1433;
+  --paper: #FDF9FC;
+  --ink: #120E22;
+  --crimson: #FF3377;
+  --electric: #00E5FF;
+  --yellow: #E040FB;
+  --neon-cyan: #69F0AE;
+  --glitch-pink: #FF4081;
+  --text-sub: #D7D0E5;
+  --text-muted: #9E96B3;
+  --border-dark: #372D57;
+  --card-bg: #191331;
+  --hero-tag-bg: #00E5FF;
+
+  /* Spider-Gwen Earth-65 Multiverse Card Dynamic Tokens */
+  --card-accent-color: #FF3377;
+  --card-badge-bg: #E040FB;
+  --card-badge-color: #FFFFFF;
+  --card-tag-bg: #FDF0FF;
+  --card-tag-text: #FF3377;
+  --card-tag-hover-bg: #FF3377;
+  --card-hover-shadow-accent: #00E5FF;
 }
 
+[data-dimension="earth-138"],
 [data-dimension="earth-928"] {
-  --void: #030712;
-  --void-2: #09132B;
-  --paper: #F0F4FF;
-  --ink: #070D1F;
-  --crimson: #FF0D42;
-  --electric: #00D4FF;
-  --yellow: #FF9100;
-  --neon-cyan: #00F0FF;
-  --glitch-pink: #FF0D42;
-  --text-sub: #C8DBFB;
-  --text-muted: #728BB5;
-  --border-dark: #1E3A6E;
-  --card-bg: #0C1B3A;
-  --hero-tag-bg: #FF0D42;
+  --void: #772289;
+  --void-2: #772289;
+  --paper: #f4d5fd;
+  --ink: #120716;
+  --crimson: #4bff21;
+  --electric: #00f0ff;
+  --yellow: #f8e602;
+  --neon-cyan: #00f0ff;
+  --glitch-pink: #f4d5fd;
+  --text-sub: #f4d5fd;
+  --text-muted: #f8e602;
+  --border-dark: #00f0ff;
+  --card-bg: #772289;
+  --hero-tag-bg: #f8e602;
+
+  /* Spider-Punk Earth-138 Multiverse Card Dynamic Tokens */
+  --card-accent-color: #00f0ff;
+  --card-badge-bg: #f8e602;
+  --card-badge-color: #772289;
+  --card-tag-bg: #f4d5fd;
+  --card-tag-text: #772289;
+  --card-tag-hover-bg: #4bff21;
+  --card-hover-shadow-accent: #4bff21;
 }
 
-/* Miles Morales (Earth-1610) Black, White & Red Theme Enhancements */
+/* Miles Morales (Earth-1610) Theme Enhancements */
 [data-dimension="earth-1610"] .heroLayerBlue {
-  color: #FFFFFF !important;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8) !important;
+  color: #79adff !important;
+  text-shadow: 0 0 12px rgba(121, 173, 255, 0.8) !important;
 }
 
 [data-dimension="earth-1610"] .heroLayerRed {
-  color: #E81A24 !important;
-  text-shadow: 0 0 12px rgba(232, 26, 36, 0.8) !important;
+  color: #ff0000 !important;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8) !important;
 }
 
 [data-dimension="earth-1610"] .ctaGhost {
-  border-color: #FFFFFF;
-  color: #FFFFFF;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 [data-dimension="earth-1610"] .ctaPrimary {
-  background: #E81A24;
-  color: #FFFFFF;
-  border-color: #000000;
+  background: #ff0000;
+  color: #ffffff;
+  border-color: #1a1c24;
 }
 
 [data-dimension="earth-1610"] .panelTab {
-  border-color: #E81A24;
-  color: #E81A24;
-  background: rgba(232, 26, 36, 0.12);
+  border-color: #ff0000;
+  color: #ff0000;
+  background: rgba(255, 0, 0, 0.12);
 }
 
 [data-dimension="earth-1610"] .projBadge,
 [data-dimension="earth-1610"] .expBadge {
-  background: #E81A24;
-  color: #FFFFFF;
-  border-color: #000000;
+  background: #ff0000;
+  color: #ffffff;
+  border-color: #1a1c24;
 }
 
 
@@ -1185,10 +1222,11 @@ body {
     repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.05) 0deg 15deg, transparent 15deg 30deg);
 }
 
+[data-dimension="earth-138"] .heroPhotoComicBg,
 [data-dimension="earth-928"] .heroPhotoComicBg {
   background:
-    radial-gradient(circle at 50% 32%, rgba(0, 200, 255, 0.45) 0%, rgba(255, 13, 66, 0.55) 45%, #040813 88%),
-    repeating-conic-gradient(from 0deg at 50% 40%, rgba(255, 255, 255, 0.05) 0deg 15deg, transparent 15deg 30deg);
+    radial-gradient(circle at 50% 32%, rgba(248, 230, 2, 0.5) 0%, rgba(0, 240, 255, 0.45) 40%, #772289 88%),
+    repeating-conic-gradient(from 0deg at 50% 40%, rgba(75, 255, 33, 0.12) 0deg 15deg, transparent 15deg 30deg);
 }
 
 /* Retro Comic Halftone Dots Overlay */
@@ -1369,47 +1407,74 @@ body {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 18px 22px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 3px solid var(--ink);
+  border-left: 6px solid var(--card-accent-color);
+  border-radius: 8px;
+  padding: 20px 24px;
   position: relative;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .timelineItem:hover {
-  transform: translateX(6px);
-  border-color: var(--electric);
+  transform: translate(-3px, -3px);
+  border-color: var(--ink);
+  box-shadow: 9px 9px 0 var(--card-hover-shadow-accent), 12px 12px 0 var(--ink);
 }
 
 .timelineIconWrap {
-  background: var(--ink);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 10px;
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  border: 2.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 3px 3px 0 var(--ink);
 }
 
 .timelineTitle {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   margin: 0;
-  color: var(--paper);
+  color: var(--ink);
+  letter-spacing: 0.3px;
 }
 
 .timelineMeta {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--card-accent-color);
   margin: 6px 0 0 0;
   font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
 }
 
 /* =========================================================
    POWERS / SKILLS (COMIC POWER-BARS)
    ========================================================= */
+.powers-arsenal-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, var(--card-badge-bg) 0%, var(--card-tag-bg) 100%);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.powers-arsenal-heading h4 {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: var(--ink);
+  margin: 0;
+}
+
 .skillGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1418,62 +1483,75 @@ body {
 }
 
 .skillGroup {
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 20px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 3px solid var(--ink);
+  border-top: 5px solid var(--card-accent-color);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skillGroup:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--card-hover-shadow-accent), 13px 13px 0 var(--ink);
 }
 
 .skillHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2.5px solid var(--ink);
 }
 
 .skillGroupLabel {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-family: 'Bangers', cursive;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--electric);
+  color: var(--card-accent-color);
   margin: 0;
 }
 
 .skillLevelBadge {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  background: rgba(47, 95, 255, 0.15);
-  color: var(--neon-cyan);
-  padding: 2px 6px;
-  border-radius: 3px;
-  border: 1px solid var(--electric);
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .skillTagList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .skillTag {
-  background: var(--ink);
-  border: 2px solid var(--border-dark);
-  color: var(--paper);
+  background: var(--card-tag-bg);
+  border: 2px solid var(--ink);
+  color: var(--ink);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
   padding: 6px 14px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: default;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .skillTag:hover {
   transform: translateY(-3px) scale(1.05);
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--card-tag-hover-bg);
+  color: #FFFFFF;
   border-color: var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
 /* =========================================================
@@ -1503,7 +1581,7 @@ body {
 
 .projCard:hover {
   transform: translate(-4px, -4px);
-  box-shadow: 13px 13px 0 var(--crimson), 16px 16px 0 var(--ink);
+  box-shadow: 13px 13px 0 var(--card-hover-shadow-accent), 16px 16px 0 var(--ink);
 }
 
 /* Comic Book Cover Header Banner */
@@ -1532,8 +1610,9 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   font-weight: 700;
-  background: var(--crimson);
-  color: var(--paper);
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  border: 1.5px solid var(--ink);
   padding: 2px 8px;
   border-radius: 2px;
   margin-bottom: 10px;
@@ -1573,8 +1652,8 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
-  background: var(--electric);
-  color: var(--paper);
+  background: var(--card-tag-bg);
+  color: var(--card-tag-text);
   padding: 3px 9px;
   border-radius: 3px;
   border: 1px solid var(--ink);
@@ -1609,8 +1688,8 @@ body {
 }
 
 .projLink:hover {
-  color: var(--crimson);
-  border-bottom-color: var(--crimson);
+  color: var(--card-accent-color);
+  border-bottom-color: var(--card-accent-color);
 }
 
 .spiderIcon {
@@ -1632,18 +1711,20 @@ body {
 }
 
 .featCard {
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 20px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 3px solid var(--ink);
+  border-top: 5px solid var(--card-accent-color);
+  border-radius: 8px;
+  padding: 22px;
   position: relative;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .featCard:hover {
-  transform: rotate(0deg) scale(1.03) !important;
-  border-color: var(--yellow);
-  box-shadow: 6px 6px 0 var(--ink);
+  transform: translate(-3px, -3px) rotate(0deg) scale(1.02) !important;
+  border-color: var(--ink);
+  box-shadow: 10px 10px 0 var(--card-hover-shadow-accent), 13px 13px 0 var(--ink);
 }
 
 .featTopRow {
@@ -1654,34 +1735,51 @@ body {
 
 .featBadge {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  background: var(--yellow);
-  color: var(--ink);
-  padding: 2px 8px;
-  border-radius: 2px;
-  border: 1px solid var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .featSoundEffect {
   font-family: 'Bangers', cursive;
-  font-size: 14px;
-  color: var(--crimson);
+  font-size: 16px;
+  color: var(--card-accent-color);
   letter-spacing: 0.5px;
 }
 
 .featTitle {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   margin: 12px 0 6px 0;
-  color: var(--paper);
+  color: var(--ink);
+  letter-spacing: 0.3px;
 }
 
 .featDetail {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #353540;
   margin: 0;
+  font-weight: 500;
+}
+
+.featCategoryStrip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  background: var(--card-tag-bg);
+  color: var(--card-tag-text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1.5px solid var(--ink);
+  margin-top: 14px;
+  display: inline-block;
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .certRow {
@@ -1689,13 +1787,21 @@ body {
   align-items: center;
   gap: 12px;
   margin-top: 32px;
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 14px 20px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 3px solid var(--ink);
+  border-top: 5px solid var(--card-accent-color);
+  border-radius: 8px;
+  padding: 16px 22px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: var(--text-sub);
+  color: var(--ink);
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certRow:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--card-hover-shadow-accent), 13px 13px 0 var(--ink);
 }
 
 /* =========================================================
@@ -1752,12 +1858,12 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--paper);
+  color: #FFFFFF;
   text-decoration: none;
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(28, 38, 68, 0.9), rgba(16, 22, 42, 0.95));
+  border: 2px solid rgba(47, 95, 255, 0.4);
+  border-radius: 8px;
+  padding: 12px 22px;
   font-size: 13px;
   font-weight: 600;
   font-family: 'JetBrains Mono', monospace;
@@ -3570,11 +3676,11 @@ body {
    OFFICIAL MARVEL CHARACTER POWER GRID
    ========================================================= */
 .marvel-power-grid-container {
-  background: rgba(16, 22, 40, 0.95);
-  border: 2.5px solid var(--border-dark);
-  border-radius: 8px;
+  background: linear-gradient(135deg, #FFFDF7 0%, #F5EFE6 100%);
+  border: 3.5px solid var(--ink);
+  border-radius: 10px;
   padding: 24px;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
   margin-bottom: 24px;
 }
 
@@ -3582,7 +3688,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 2.5px solid var(--ink);
   padding-bottom: 16px;
   margin-bottom: 20px;
   flex-wrap: wrap;
@@ -3597,17 +3703,17 @@ body {
 
 .marvel-grid-title h3 {
   font-family: 'Bangers', cursive;
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 1px;
-  color: var(--paper);
+  color: var(--ink);
   margin: 0;
 }
 
 .marvel-grid-subtitle {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--yellow);
-  font-weight: 700;
+  font-size: 11px;
+  color: var(--crimson);
+  font-weight: 800;
   margin-top: 2px;
 }
 
@@ -3622,14 +3728,16 @@ body {
   align-items: center;
   gap: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--text-sub);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .legend-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
+  border: 1px solid var(--ink);
 }
 
 .legend-dot.max {
@@ -3647,17 +3755,18 @@ body {
 }
 
 .marvel-stat-card {
-  background: rgba(7, 10, 20, 0.8);
-  border: 1.5px solid var(--border-dark);
-  border-radius: 6px;
-  padding: 14px 16px;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: #FFFFFF;
+  border: 2.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .marvel-stat-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--yellow);
-  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-3px, -3px);
+  border-color: var(--ink);
+  box-shadow: 7px 7px 0 var(--yellow), 9px 9px 0 var(--ink);
 }
 
 .marvel-stat-card-header {
@@ -3680,9 +3789,9 @@ body {
 
 .stat-name {
   font-family: 'Bangers', cursive;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.5px;
-  color: var(--paper);
+  color: var(--ink);
   margin: 0;
 }
 
@@ -3694,7 +3803,8 @@ body {
   color: var(--ink);
   padding: 2px 6px;
   border-radius: 3px;
-  border: 1px solid var(--ink);
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .marvel-stat-meter-container {
@@ -3707,10 +3817,10 @@ body {
 .marvel-stat-meter-bg {
   flex: 1;
   height: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #EBEBEB;
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid var(--ink);
   position: relative;
 }
 
@@ -3723,15 +3833,16 @@ body {
 
 .stat-pct-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--neon-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--electric);
 }
 
 .marvel-stat-desc {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
-  color: var(--text-sub);
+  font-weight: 500;
+  color: #353540;
   margin: 0;
   line-height: 1.4;
 }
@@ -3934,11 +4045,12 @@ body {
 }
 
 .comic-resume-card {
-  background: rgba(10, 14, 26, 0.8);
-  border: 1.5px solid var(--border-dark);
-  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(24, 34, 62, 0.88), rgba(15, 20, 38, 0.94));
+  border: 1.5px solid rgba(47, 95, 255, 0.35);
+  border-radius: 8px;
   padding: 16px;
   margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .comic-card-title-bar {
@@ -4003,17 +4115,20 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--paper);
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid var(--border-dark);
+  background: rgba(36, 50, 88, 0.75);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.35);
 }
 
 .comic-feat-card {
-  background: rgba(10, 14, 26, 0.8);
+  background: linear-gradient(135deg, rgba(24, 34, 62, 0.88), rgba(15, 20, 38, 0.94));
   border-left: 4px solid var(--yellow);
-  border-radius: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
   padding: 14px 16px;
   margin-bottom: 12px;
 }
@@ -4132,4 +4247,172 @@ body {
 
 .navBrand:hover .marvel-nav-logo {
   transform: scale(1.1) rotate(-2deg);
+}
+
+/* =========================================================
+   FIELD OPERATIONS & EXPERIENCE CARDS
+   ========================================================= */
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.experienceCard {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 3px solid var(--ink);
+  border-top: 5px solid var(--card-accent-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.experienceCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--card-hover-shadow-accent), 13px 13px 0 var(--ink);
+}
+
+.expHeaderBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+.expHeaderTag {
+  display: flex;
+  align-items: center;
+}
+
+.expBadge {
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1.5px solid var(--ink);
+}
+
+.expCardBody {
+  padding: 20px 22px;
+}
+
+.expRoleTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+}
+
+.expMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.expCompany {
+  color: var(--card-accent-color);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.expLocation {
+  color: var(--crimson);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.expTypeTag {
+  background: var(--card-tag-bg);
+  color: var(--card-tag-text);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+}
+
+.expSummary {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #353540;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.expSubHeading {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.expBulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expBulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #2D2D38;
+}
+
+.expBulletIcon {
+  color: var(--card-accent-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.expTechFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: 1.5px dashed rgba(20, 23, 34, 0.2);
+  padding-top: 14px;
+}
+
+.expTechLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.expTechTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.expTechTag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--card-tag-bg);
+  color: var(--card-tag-text);
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
 }
